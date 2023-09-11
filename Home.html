@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="left">
+                <div class="links">
+                    <a href="Home.html">DashBoard</a>
+                </div>
+                <div class="links">
+                    <a href="Products.html">Products</a>
+                </div>
+            </div>
+            <div class="right" id="right"></div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded",loadproduct);
+        const layout = document.getElementById("right");
+        function loadproduct(){
+        let products;
+        if (localStorage.getItem("products")===null) {
+            products = [{
+                Url: "https://idestiny.in/wp-content/uploads/2022/09/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-1a_Avail__en-IN.jpg",
+                desc: "Iphone 14 Pro",
+                price: "50,000",
+            }];
+        }
+        else{
+            products = JSON.parse(localStorage.getItem("products"));
+        }
+        products.forEach((product)=>{
+            addlisting(product.Url,product.desc,product.price,product.stock)
+        })
+        }
+
+        function addlisting(Url,desc,price)
+        {
+            const productadd = document.createElement("div");
+            productadd.className = "gridItem";
+            productadd.innerHTML = `
+            <div class="product">
+                <div>
+                    <img src=${Url} alt="">
+                </div>
+                <div class="description">
+                    <p>${desc}</p>
+                </div>
+                <div class="rate">
+                    <p>Rs.<span>${price}</span>/-</p>
+                </div>
+                
+            </div>`;
+            layout.prepend(productadd);
+        }
+    </script>
+</body>
+</html>
