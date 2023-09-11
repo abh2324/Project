@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: lightgrey;
 }
 /* div{
     border: 1px solid red;
@@ -19,14 +20,14 @@ body{
     width: 20%;
     padding: 2%;
     text-align: center;
-    background: linear-gradient(to bottom right,rgb(202, 88, 255),rgb(232, 63, 190));
+    background: linear-gradient(to bottom right,rgb(22, 75, 209),rgb(22, 211, 232));
 }
 a{
     text-decoration: none;
     font-weight: bold;
     font-size: larger;
     font-family: Georgia;
-    color: whitesmoke;
+    color: white;
     
 }
 .links{
@@ -34,10 +35,10 @@ a{
     padding: 4% 0 4% 0;
     /* border-radius: 100px; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.15) ;
-    background-color: rgb(54, 102, 150);
+    background-color: black;
 }
 .links:hover{
-    background: -webkit-linear-gradient(left, transparent 40%, rgb(54, 102, 150) 60%);
+    background: -webkit-linear-gradient(left, grey 40%,black 60%);
 }
 .right{
     min-height: 100vh;
@@ -50,7 +51,7 @@ a{
 }
 .product{
     height: 100%;
-    background-color: rgb(242, 242, 242);
+    background-color: #b2beb5;
     border-radius: 20px;
     padding: 2%;
     box-sizing: border-box;
